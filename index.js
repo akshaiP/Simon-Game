@@ -17,7 +17,6 @@ function start(started){
 }
 
 function nextSequence(){
-    console.log("called");
     start(started=false);
     level++;
     $("#level-title").html("Level "+level);
@@ -54,7 +53,7 @@ function gameOver(){
     setTimeout(function(){
         $("body").removeClass("game-over");
     },200);
-    start(started=true);
+    if(started === false ) start(started=true);
     startOver();
 }
 
